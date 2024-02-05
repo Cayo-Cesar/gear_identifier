@@ -38,18 +38,18 @@ img2 = cv2.copyMakeBorder(img, 0, 0, 0, 0, cv2.BORDER_REPLICATE)
 
 img_contornos = cv2.drawContours(img, objetos, -1 , (255, 0, 0), 2)
 
-cv2.imshow("engrenagens aceitas", img_contornos)
-cv2.imwrite("engrenagens aceitas.png", img_contornos)
+cv2.imshow("Engrenagens Aceitas", img_contornos)
+cv2.imwrite('resultados/engrenagens_aceitas.png', img_contornos)
 
 img_contornos1 = cv2.drawContours(img2, objetos1, -1 , (0, 0, 255), 2)
 
-cv2.imshow("engrenagens recusadas", img_contornos1)
-cv2.imwrite("engrenagens recusadas.png", img_contornos1)
+cv2.imshow("Engrenagens Recusadas", img_contornos1)
+cv2.imwrite('resultados/engrenagens_recusadas.png', img_contornos1)
 
 img_contornos = cv2.drawContours(img, objetos1, -1 , (0, 0, 255), 2)
 
-cv2.imshow("aceitas e recusadas", img)
-cv2.imwrite("aceitas e recusadas.png", img)
+cv2.imshow("Aceitas e Recusadas", img)
+cv2.imwrite('resultados/aceitas_e_recusadas.png', img)
 
 img_contornos = cv2.drawContours(mask, objetos, -1, 255, -1)
 
@@ -62,7 +62,12 @@ img[mask == 255] = background[mask == 255]
 img[mask != 255] = object_in_background[mask != 255]
 
 img = cv2.bitwise_not(img)
-cv2.imshow('Engrenagens corretas', img)
-cv2.imwrite('Engrenagens corretas.png', img) 
+cv2.imshow('Engrenagens Corretas', img)
+cv2.imwrite('resultados/engrenagens_corretas.png', img)
  
 cv2.waitKey(0)
+
+
+
+
+
